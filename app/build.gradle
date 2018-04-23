@@ -15,6 +15,20 @@ android {
             }
         }
     }
+
+    productFlavors {
+        develop {
+            dimension "default"
+            resValue "string", "app_name", "My NameCard Beta"
+        }
+        production {
+            dimension "default"
+            resValue "string", "app_name", "My NameCard"
+        }
+    }
+
+    flavorDimensions "default"
+
     buildTypes {
         release {
             minifyEnabled false
@@ -26,10 +40,14 @@ android {
             path "CMakeLists.txt"
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
