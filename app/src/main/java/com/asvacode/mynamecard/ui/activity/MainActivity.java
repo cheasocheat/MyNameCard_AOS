@@ -8,6 +8,8 @@ import com.asvacode.mynamecard.R;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dagger.android.AndroidInjection;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,14 +17,15 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     public String greeting;
 
+    @BindView(R.id.sample_text) TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         // Example of a call to a native method
-        TextView tv = findViewById(R.id.sample_text);
-        tv.setText("Hello My Namecard");
+        textView.setText("Hello My Namecard");
     }
 }
