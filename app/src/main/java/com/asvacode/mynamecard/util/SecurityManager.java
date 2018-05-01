@@ -16,4 +16,7 @@ public class SecurityManager {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    //Get Database Name
+    public static native String getDatabaseName();
 }

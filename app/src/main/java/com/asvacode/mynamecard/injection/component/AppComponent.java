@@ -2,6 +2,7 @@ package com.asvacode.mynamecard.injection.component;
 
 import com.asvacode.mynamecard.application.App;
 import com.asvacode.mynamecard.injection.builder.ActivityBuilder;
+import com.asvacode.mynamecard.injection.module.AppDatabaseModule;
 import com.asvacode.mynamecard.injection.module.AppModule;
 
 import javax.inject.Singleton;
@@ -18,6 +19,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {
         AndroidSupportInjectionModule.class /* Use AndroidInjectionModule.class if you're not using support library */,
         AppModule.class,
+        AppDatabaseModule.class,
         ActivityBuilder.class
 })
 public interface AppComponent {

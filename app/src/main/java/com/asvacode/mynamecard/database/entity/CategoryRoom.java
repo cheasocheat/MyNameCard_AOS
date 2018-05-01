@@ -10,23 +10,19 @@ import com.asvacode.mynamecard.util.DateConverter;
 import java.util.Date;
 
 /**
- * Created by cheasocheat on 4/24/18.
+ * Created by cheasocheat on 5/1/18.
  */
-@Entity(tableName = "tb_card")
-public class CardRoom {
+@Entity(tableName = "tb_category")
+public class CategoryRoom {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
-    @ColumnInfo(name = "cate_id")
-    private int cateId;
-    @ColumnInfo(name = "uri")
-    private String uri;
-    @ColumnInfo(name = "favorite")
-    private boolean favorite;
+    @ColumnInfo(name = "desc")
+    private String desc;
     @ColumnInfo(name = "record_status")
     private String recStatus;
-    @TypeConverters(DateConverter.class)
     @ColumnInfo(name = "created_date")
+    @TypeConverters(DateConverter.class)
     private Date createdDate;
     @TypeConverters(DateConverter.class)
     @ColumnInfo(name = "updated_date")
@@ -40,28 +36,12 @@ public class CardRoom {
         this.id = id;
     }
 
-    public int getCateId() {
-        return cateId;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setCateId(int cateId) {
-        this.cateId = cateId;
-    }
-
-    public String getUri() {
-        return uri;
-    }
-
-    public void setUri(String uri) {
-        this.uri = uri;
-    }
-
-    public boolean isFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(boolean favorite) {
-        this.favorite = favorite;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public String getRecStatus() {
